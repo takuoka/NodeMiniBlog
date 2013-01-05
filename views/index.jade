@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+
+	form(action="/", method="post")
+		input(type="text", name="text")
+		input(type="submit")
+
+	div.miniBlog
+		ul.postList
+			each post in posts
+				li.post
+					p= post.text
+					p= post.created
